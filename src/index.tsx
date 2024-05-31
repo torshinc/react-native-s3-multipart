@@ -21,7 +21,7 @@ const LINKING_ERROR =
 
 const S3Multipart = NativeModules.S3Multipart
   ? NativeModules.S3Multipart
-  : new Proxy(
+  Platform.OS === "android" ? {} : new Proxy(
       {},
       {
         get() {
